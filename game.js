@@ -1,5 +1,10 @@
 const canvas = document.querySelector('#game');
 const game = canvas.getContext('2d');
+// variables para nuestros botones
+const btnUp = document.querySelector('#up')
+const btnRight = document.querySelector('#right')
+const btnDown = document.querySelector('#down')
+const btnLeft = document.querySelector('#left')
 let canvasSize;
 let elementSize;
 
@@ -59,3 +64,33 @@ function setCanvasSize() {
     elementSize = (canvasSize / 10) - 1;
     startGame();
 }
+    window.addEventListener('keydown', movimientoOrdenador);
+    btnUp.addEventListener('click', moviemientoUp);
+    btnRight.addEventListener('click', moviemientoRight);
+    btnLeft.addEventListener('click', moviemientoLeft);
+    btnDown.addEventListener('click', moviemientoDown);
+
+    // Funciones 
+
+    function movimientoOrdenador(e) {
+        if (e.key == 'ArrowUp') moviemientoUp();
+        else if (e.key == 'ArrowRight') moviemientoRight();
+        else if (e.key == 'ArrowLeft') moviemientoLeft();
+        else if (e.key == 'ArrowDown') moviemientoDown();     
+    }
+
+    function moviemientoUp() {
+        console.log('me quiero mover hacia arriba')
+    }
+    
+    function moviemientoRight() {
+        console.log('me quiero mover a la derecha')
+    }
+    
+    function moviemientoDown() {
+        console.log('me quiero mover hacia abajo')
+    }
+    
+    function moviemientoLeft() {
+        console.log('me quiero mover hacia la izquierda')
+    }
